@@ -7,6 +7,7 @@ import { UnitsModule } from './units/units.module';
 import { ApolloServerPluginLandingPageLocalDefault } from 'apollo-server-core';
 import { PrismaModule } from './prisma/prisma.module';
 import { AppController } from './app.controller';
+import { DepartmentsModule } from './departments/departments.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { AppController } from './app.controller';
     }),
     PrismaModule,
     UnitsModule,
+    DepartmentsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
