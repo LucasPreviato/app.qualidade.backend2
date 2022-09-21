@@ -1,7 +1,15 @@
-import { ObjectType, Field, Int } from '@nestjs/graphql';
+import { ObjectType, Field, Int, InputType } from '@nestjs/graphql';
+import { Prisma } from '@prisma/client';
 
 @ObjectType()
-export class Unit {
-  @Field(() => Int, { description: 'Example field (placeholder)' })
-  exampleField: number;
+@InputType('UnitInput')
+export class Unit implements Prisma.UnitUncheckedCreateInput {
+  @Field(() => Int)
+  id?: number;
+  @Field()
+  name: string;
+  @Field()
+  email?: string;
+  @Field()
+  phone?: string;
 }

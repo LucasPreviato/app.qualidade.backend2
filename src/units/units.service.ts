@@ -1,15 +1,21 @@
 import { Injectable } from '@nestjs/common';
+import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateUnitInput } from './dto/create-unit.input';
 import { UpdateUnitInput } from './dto/update-unit.input';
 
 @Injectable()
 export class UnitsService {
+  constructor(private prisma: PrismaService) {}
   create(createUnitInput: CreateUnitInput) {
-    return 'This action adds a new unit';
+    return this.prisma.unit.create({
+      data: {
+        ...createUnitInput,
+      },
+    });
   }
 
   findAll() {
-    return `This action returns all units`;
+    return this.prisma.unit.findMany();
   }
 
   findOne(id: number) {
@@ -21,6 +27,6 @@ export class UnitsService {
   }
 
   remove(id: number) {
-    return `This action removes a #${id} unit`;
+    return this.prisma.unit.delete({ where: { id } });
   }
 }
