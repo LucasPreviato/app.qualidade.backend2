@@ -2,7 +2,7 @@ import { InputType, Int, Field } from '@nestjs/graphql';
 import { Department } from '../entities/department.entity';
 
 @InputType()
-export class CreateDepartmentInput extends Department {
+export class CreateDepartmentInput {
   @Field(() => Int)
   unitId: number;
   @Field()

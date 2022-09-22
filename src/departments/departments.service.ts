@@ -18,7 +18,11 @@ export class DepartmentsService {
   }
 
   findAll() {
-    return `This action returns all departments`;
+    return this.prisma.department.findMany({
+      include: {
+        unit: true,
+      },
+    });
   }
 
   findOne(id: number) {

@@ -1,0 +1,73 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input CreateDepartmentInput {
+  email: String!
+  initials: String!
+  name: String!
+  phone: String!
+  unitId: Int!
+}
+
+input CreateUnitInput {
+  email: String!
+  name: String!
+  phone: String!
+}
+
+type Department {
+  email: String!
+  id: Int!
+  initials: String!
+  name: String!
+  phone: String!
+  unit: Unit!
+  unitId: Int!
+}
+
+input DepartmentInput {
+  email: String!
+  id: Int!
+  initials: String!
+  name: String!
+  phone: String!
+  unit: UnitInput!
+  unitId: Int!
+}
+
+type Mutation {
+  createDepartment(createDepartmentInput: CreateDepartmentInput!): Department!
+  createUnit(createUnitInput: CreateUnitInput!): Unit!
+  removeDepartment(id: Int!): Department!
+  removeUnit(id: Int!): Unit!
+  updateUnit(updateUnitInput: UpdateUnitInput!): Unit!
+}
+
+type Query {
+  department(id: Int!): Department!
+  departments: [Department!]!
+  unit(id: Int!): Unit!
+  units: [Unit!]!
+}
+
+type Unit {
+  email: String!
+  id: Int!
+  name: String!
+  phone: String!
+}
+
+input UnitInput {
+  email: String!
+  id: Int!
+  name: String!
+  phone: String!
+}
+
+input UpdateUnitInput {
+  email: String
+  id: Int!
+  name: String
+  phone: String
+}

@@ -5,7 +5,6 @@ import { join } from 'path/posix';
 import { AppService } from './app.service';
 import { UnitsModule } from './units/units.module';
 import { ApolloServerPluginLandingPageLocalDefault } from 'apollo-server-core';
-import { PrismaModule } from './prisma/prisma.module';
 import { AppController } from './app.controller';
 import { DepartmentsModule } from './departments/departments.module';
 
@@ -18,7 +17,6 @@ import { DepartmentsModule } from './departments/departments.module';
       playground: false,
       plugins: [ApolloServerPluginLandingPageLocalDefault()],
     }),
-    PrismaModule,
     UnitsModule,
     DepartmentsModule,
   ],
