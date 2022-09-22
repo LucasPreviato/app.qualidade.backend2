@@ -18,11 +18,16 @@ export class DepartmentsService {
   }
 
   findAll() {
-    return `This action returns all departments`;
+    return this.prisma.department.findMany({
+      include: { unit: true },
+    });
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} department`;
+    return this.prisma.department.findUnique({
+      where: { id },
+      include: { unit: true },
+    });
   }
 
   // update(id: number, updateDepartmentInput: UpdateDepartmentInput) {
@@ -30,6 +35,6 @@ export class DepartmentsService {
   // }
 
   remove(id: number) {
-    return `This action removes a #${id} department`;
+    return this.prisma.department.delete({ where: { id } });
   }
 }
