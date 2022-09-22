@@ -19,7 +19,10 @@ export class DepartmentsService {
 
   findAll() {
     return this.prisma.department.findMany({
-      include: { unit: true },
+
+      include: {
+        unit: true,
+      },
     });
   }
 

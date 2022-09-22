@@ -10,7 +10,7 @@ import {
 import { Department } from '../entities/department.entity';
 
 @InputType()
-export class CreateDepartmentInput extends Department {
+export class CreateDepartmentInput {
   @Field(() => Int)
   @IsNotEmpty()
   @IsInt()
