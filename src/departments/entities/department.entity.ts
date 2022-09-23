@@ -11,13 +11,12 @@ export class Department implements Prisma.DepartmentUncheckedCreateInput {
   unitId: number;
   @Field()
   name: string;
-  @Field()
+  @Field({ nullable: true })
   email?: string;
-  @Field()
+  @Field({ nullable: true })
   phone?: string;
   @Field()
-  initials?: string;
-
+  initials: string;
   @Field(() => Unit)
   unit: Unit;
 }

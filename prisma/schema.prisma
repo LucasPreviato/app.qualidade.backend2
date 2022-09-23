@@ -23,7 +23,7 @@ model Department {
   name     String
   email    String?
   phone    String?
-  initials String?
+  initials String
   unit     Unit    @relation(fields: [unitId], references: [id])
   unitId   Int
 }
