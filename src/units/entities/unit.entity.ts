@@ -1,5 +1,6 @@
 import { ObjectType, Field, Int, InputType } from '@nestjs/graphql';
 import { Prisma } from '@prisma/client';
+import { UnitAddress } from './unitaddress.entity';
 
 @ObjectType()
 @InputType('UnitInput')
@@ -12,4 +13,6 @@ export class Unit implements Prisma.UnitUncheckedCreateInput {
   email?: string;
   @Field()
   phone?: string;
+  @Field(() => UnitAddress)
+  unitaddress: UnitAddress;
 }

@@ -1,6 +1,7 @@
 import { InputType, Field } from '@nestjs/graphql';
 import { Prisma } from '@prisma/client';
 import { IsNotEmpty, IsOptional, IsString, MinLength } from 'class-validator';
+import { UnitAddress } from '../entities/unitaddress.entity';
 
 @InputType()
 export class CreateUnitInput implements Prisma.UnitCreateInput {
@@ -18,4 +19,6 @@ export class CreateUnitInput implements Prisma.UnitCreateInput {
   @IsOptional()
   @IsString()
   phone?: string;
+  @Field(() => UnitAddress)
+  unitaddress: UnitAddress;
 }

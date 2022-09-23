@@ -10,6 +10,17 @@ export class UnitsService {
     return this.prisma.unit.create({
       data: {
         ...createUnitInput,
+        UnitAddress: {
+          create: {
+            street: createUnitInput.unitaddress.street,
+            number: createUnitInput.unitaddress.number,
+            complement: createUnitInput.unitaddress.complement,
+            district: createUnitInput.unitaddress.district,
+            city: createUnitInput.unitaddress.city,
+            cep: createUnitInput.unitaddress.cep,
+            uf: createUnitInput.unitaddress.uf,
+          },
+        },
       },
     });
   }
