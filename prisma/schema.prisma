@@ -47,10 +47,10 @@ model JobCategory {
   name String @unique
 }
 
-model Office {
+model Occupation {
   id           Int      @id @default(autoincrement())
   name         String   @unique
-  version      Int      @default(000)
+  version      Int      @default(autoincrement())
   daterevision DateTime @db.Date
   alterations  String
 }
