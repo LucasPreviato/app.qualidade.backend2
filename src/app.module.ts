@@ -8,6 +8,7 @@ import { ApolloServerPluginLandingPageLocalDefault } from 'apollo-server-core';
 import { PrismaModule } from './prisma/prisma.module';
 import { AppController } from './app.controller';
 import { DepartmentsModule } from './departments/departments.module';
+import { JobcategoriesModule } from './jobcategories/jobcategories.module';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { DepartmentsModule } from './departments/departments.module';
     PrismaModule,
     UnitsModule,
     DepartmentsModule,
+    JobcategoriesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
