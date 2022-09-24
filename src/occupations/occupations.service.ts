@@ -13,7 +13,7 @@ export class OccupationsService {
   }
 
   findAll() {
-    return `This action returns all occupations`;
+    return this.prisma.occupation.findMany();
   }
 
   findOne(id: number) {

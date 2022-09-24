@@ -10,7 +10,7 @@ export class Occupation implements Prisma.OccupationUncheckedCreateInput {
   name: string;
   @Field()
   version?: number;
-  @Field()
+  @Field(() => Date)
   daterevision: string | Date;
   @Field()
   alterations: string;
