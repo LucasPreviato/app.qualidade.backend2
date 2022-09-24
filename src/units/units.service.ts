@@ -6,19 +6,21 @@ import { UpdateUnitInput } from './dto/update-unit.input';
 @Injectable()
 export class UnitsService {
   constructor(private prisma: PrismaService) {}
-  create(createUnitInput: CreateUnitInput) {
+  create({ name, email, phone, unitaddress }: CreateUnitInput) {
     return this.prisma.unit.create({
       data: {
-        ...createUnitInput,
+        name,
+        email,
+        phone,
         UnitAddress: {
           create: {
-            street: createUnitInput.unitaddress.street,
-            number: createUnitInput.unitaddress.number,
-            complement: createUnitInput.unitaddress.complement,
-            district: createUnitInput.unitaddress.district,
-            city: createUnitInput.unitaddress.city,
-            cep: createUnitInput.unitaddress.cep,
-            uf: createUnitInput.unitaddress.uf,
+            street: unitaddress.street,
+            number: unitaddress.number,
+            district: unitaddress.district,
+            city: unitaddress.city,
+            cep: unitaddress.cep,
+            uf: unitaddress.uf,
+            complement: unitaddress.complement,
           },
         },
       },

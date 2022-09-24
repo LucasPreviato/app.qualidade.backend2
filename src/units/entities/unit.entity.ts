@@ -13,6 +13,6 @@ export class Unit implements Prisma.UnitUncheckedCreateInput {
   email?: string;
   @Field()
   phone?: string;
-  @Field(() => UnitAddress)
-  unitaddress: UnitAddress;
+  @Field(() => UnitAddress, { nullable: true })
+  unitaddress?: UnitAddress;
 }

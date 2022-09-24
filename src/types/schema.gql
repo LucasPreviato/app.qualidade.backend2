@@ -16,7 +16,7 @@ input CreateUnitInput {
   email: String!
   name: String!
   phone: String!
-  unitaddress: UnitAddressInput!
+  unitaddress: UnitAddressInput
 }
 
 type Department {
@@ -59,7 +59,7 @@ type Unit {
   id: Int!
   name: String!
   phone: String!
-  unitaddress: UnitAddress!
+  unitaddress: UnitAddress
 }
 
 type UnitAddress {
@@ -91,7 +91,7 @@ input UnitInput {
   id: Int!
   name: String!
   phone: String!
-  unitaddress: UnitAddressInput!
+  unitaddress: UnitAddressInput
 }
 
 input UpdateUnitInput {

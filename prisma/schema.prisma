@@ -38,6 +38,6 @@ model UnitAddress {
   city       String?
   cep        String? @unique
   uf         String?
-  unit       Unit    @relation(fields: [unitid], references: [id])
-  unitid     Int     @unique
+  unit       Unit?   @relation(fields: [unitid], references: [id])
+  unitid     Int?    @unique
 }

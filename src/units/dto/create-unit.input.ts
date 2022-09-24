@@ -4,7 +4,7 @@ import { IsNotEmpty, IsOptional, IsString, MinLength } from 'class-validator';
 import { UnitAddress } from '../entities/unitaddress.entity';
 
 @InputType()
-export class CreateUnitInput implements Prisma.UnitCreateInput {
+export class CreateUnitInput {
   @Field()
   @IsString()
   @IsNotEmpty()
@@ -19,6 +19,6 @@ export class CreateUnitInput implements Prisma.UnitCreateInput {
   @IsOptional()
   @IsString()
   phone?: string;
-  @Field(() => UnitAddress)
+  @Field(() => UnitAddress, { nullable: true })
   unitaddress: UnitAddress;
 }
