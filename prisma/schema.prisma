@@ -46,3 +46,11 @@ model JobCategory {
   id   Int    @id @default(autoincrement())
   name String @unique
 }
+
+model Office {
+  id           Int      @id @default(autoincrement())
+  name         String   @unique
+  version      Int      @default(000)
+  daterevision DateTime @db.Date
+  alterations  String
+}

@@ -12,6 +12,10 @@ input CreateDepartmentInput {
   unitId: Int!
 }
 
+input CreateJobcategoryInput {
+  name: String!
+}
+
 input CreateUnitInput {
   email: String!
   name: String!
@@ -39,17 +43,32 @@ input DepartmentInput {
   unitId: Int!
 }
 
+input JobCategoryInput {
+  id: Int
+  name: String!
+}
+
+type Jobcategory {
+  id: Int
+  name: String!
+}
+
 type Mutation {
   createDepartment(createDepartmentInput: CreateDepartmentInput!): Department!
+  createJobcategory(createJobcategoryInput: CreateJobcategoryInput!): Jobcategory!
   createUnit(createUnitInput: CreateUnitInput!): Unit!
   removeDepartment(id: Int!): Department!
+  removeJobcategory(id: Int!): Jobcategory!
   removeUnit(id: Int!): Unit!
+  updateJobcategory(updateJobcategoryInput: UpdateJobcategoryInput!): Jobcategory!
   updateUnit(updateUnitInput: UpdateUnitInput!): Unit!
 }
 
 type Query {
   department(id: Int!): Department!
   departments: [Department!]!
+  jobcategories: [Jobcategory!]!
+  jobcategory(id: Int!): Jobcategory!
   unit(id: Int!): Unit!
   units: [Unit!]!
 }
@@ -92,6 +111,11 @@ input UnitInput {
   name: String!
   phone: String!
   unitaddress: UnitAddressInput
+}
+
+input UpdateJobcategoryInput {
+  id: Int!
+  name: String
 }
 
 input UpdateUnitInput {
