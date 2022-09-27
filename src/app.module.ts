@@ -7,6 +7,7 @@ import { UnitsModule } from './units/units.module';
 import { ApolloServerPluginLandingPageLocalDefault } from 'apollo-server-core';
 import { AppController } from './app.controller';
 import { DepartmentsModule } from './departments/departments.module';
+import { JobcategoriesModule } from './jobcategories/jobcategories.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { DepartmentsModule } from './departments/departments.module';
     }),
     UnitsModule,
     DepartmentsModule,
+    JobcategoriesModule,
   ],
   controllers: [AppController],
   providers: [AppService],

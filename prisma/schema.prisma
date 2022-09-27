@@ -41,3 +41,9 @@ model UnitAddress {
   unit       Unit?   @relation(fields: [unitid], references: [id])
   unitid     Int?    @unique
 }
+
+model JobCategory {
+  id   Int    @id @default(autoincrement())
+  name String @unique
+}
+
