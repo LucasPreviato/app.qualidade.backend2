@@ -11,11 +11,12 @@ datasource db {
 }
 
 model Unit {
-  id         Int          @id @default(autoincrement())
-  name       String       @unique
-  email      String?
-  phone      String?
-  Department Department[]
+  id          Int          @id @default(autoincrement())
+  name        String       @unique
+  email       String?
+  phone       String?
+  Department  Department[]
+  UnitAddress UnitAddress?
 }
 
 model Department {
@@ -26,4 +27,17 @@ model Department {
   initials String
   unit     Unit    @relation(fields: [unitId], references: [id])
   unitId   Int
+}
+
+model UnitAddress {
+  id         Int     @id @default(autoincrement())
+  street     String?
+  number     String?
+  complement String?
+  district   String?
+  city       String?
+  cep        String? @unique
+  uf         String?
+  unit       Unit?   @relation(fields: [unitid], references: [id])
+  unitid     Int?    @unique
 }
