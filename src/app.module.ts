@@ -9,10 +9,6 @@ import { AppController } from './app.controller';
 import { DepartmentsModule } from './departments/departments.module';
 import { JobcategoriesModule } from './jobcategories/jobcategories.module';
 
-import { OccupationsModule } from './occupations/occupations.module';
-=======
-
-
 @Module({
   imports: [
     GraphQLModule.forRoot<ApolloDriverConfig>({
@@ -25,7 +21,6 @@ import { OccupationsModule } from './occupations/occupations.module';
     UnitsModule,
     DepartmentsModule,
     JobcategoriesModule,
-    OccupationsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
