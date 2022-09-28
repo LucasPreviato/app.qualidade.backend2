@@ -48,9 +48,9 @@ model JobCategory {
 }
 
 model Occupation {
-  id           Int      @id @default(autoincrement())
-  name         String   @unique
-  version      Int      @default(autoincrement())
-  daterevision DateTime @db.Date
-  alterations  String
+  id          Int      @id @default(autoincrement())
+  name        String   @unique
+  version     Int      @default(autoincrement())
+  revisionAt  DateTime @default(now())
+  alterations String
 }
