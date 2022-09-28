@@ -47,3 +47,12 @@ model JobCategory {
   name String @unique
 }
 
+
+model Occupation {
+  id          Int      @id @default(autoincrement())
+  name        String   @unique
+  version     Int      @default(autoincrement())
+  revisionAt  DateTime @default(now())
+  alterations String
+}
+
