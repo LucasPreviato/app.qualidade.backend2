@@ -16,7 +16,7 @@ model Unit {
   email       String?
   phone       String?
   Department  Department[]
-  UnitAddress UnitAddress?
+  unitAddress UnitAddress?
 }
 
 model Department {
@@ -36,7 +36,7 @@ model UnitAddress {
   complement String?
   district   String?
   city       String?
-  cep        String? @unique
+  cep        String? 
   uf         String?
   unit       Unit?   @relation(fields: [unitid], references: [id])
   unitid     Int?    @unique
