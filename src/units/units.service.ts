@@ -12,7 +12,7 @@ export class UnitsService {
         name,
         email,
         phone,
-        UnitAddress: {
+        unitAddress: {
           create: {
             street: unitaddress.street,
             number: unitaddress.number,
@@ -24,11 +24,12 @@ export class UnitsService {
           },
         },
       },
+      include: { unitAddress: true },
     });
   }
 
   findAll() {
-    return this.prisma.unit.findMany();
+    return this.prisma.unit.findMany({ include: { unitAddress: true } });
   }
 
   findOne(id: number) {

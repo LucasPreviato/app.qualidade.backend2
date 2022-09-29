@@ -4,7 +4,7 @@ import { UnitAddress } from './unitaddress.entity';
 
 @ObjectType()
 @InputType('UnitInput')
-export class Unit implements Prisma.UnitUncheckedCreateInput {
+export class Unit {
   @Field(() => Int)
   id?: number;
   @Field()
@@ -14,5 +14,5 @@ export class Unit implements Prisma.UnitUncheckedCreateInput {
   @Field()
   phone?: string;
   @Field(() => UnitAddress, { nullable: true })
-  unitaddress?: UnitAddress;
+  unitAddress?: UnitAddress;
 }

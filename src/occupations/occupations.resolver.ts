@@ -9,7 +9,9 @@ export class OccupationsResolver {
   constructor(private readonly occupationsService: OccupationsService) {}
 
   @Mutation(() => Occupation)
-  createOccupation(@Args('createOccupationInput') createOccupationInput: CreateOccupationInput) {
+  createOccupation(
+    @Args('createOccupationInput') createOccupationInput: CreateOccupationInput,
+  ) {
     return this.occupationsService.create(createOccupationInput);
   }
 
@@ -24,8 +26,13 @@ export class OccupationsResolver {
   }
 
   @Mutation(() => Occupation)
-  updateOccupation(@Args('updateOccupationInput') updateOccupationInput: UpdateOccupationInput) {
-    return this.occupationsService.update(updateOccupationInput.id, updateOccupationInput);
+  updateOccupation(
+    @Args('updateOccupationInput') updateOccupationInput: UpdateOccupationInput,
+  ) {
+    return this.occupationsService.update(
+      updateOccupationInput.id,
+      updateOccupationInput,
+    );
   }
 
   @Mutation(() => Occupation)

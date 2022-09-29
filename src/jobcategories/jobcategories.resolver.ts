@@ -9,7 +9,10 @@ export class JobcategoriesResolver {
   constructor(private readonly jobcategoriesService: JobcategoriesService) {}
 
   @Mutation(() => Jobcategory)
-  createJobcategory(@Args('createJobcategoryInput') createJobcategoryInput: CreateJobcategoryInput) {
+  createJobcategory(
+    @Args('createJobcategoryInput')
+    createJobcategoryInput: CreateJobcategoryInput,
+  ) {
     return this.jobcategoriesService.create(createJobcategoryInput);
   }
 
@@ -24,8 +27,14 @@ export class JobcategoriesResolver {
   }
 
   @Mutation(() => Jobcategory)
-  updateJobcategory(@Args('updateJobcategoryInput') updateJobcategoryInput: UpdateJobcategoryInput) {
-    return this.jobcategoriesService.update(updateJobcategoryInput.id, updateJobcategoryInput);
+  updateJobcategory(
+    @Args('updateJobcategoryInput')
+    updateJobcategoryInput: UpdateJobcategoryInput,
+  ) {
+    return this.jobcategoriesService.update(
+      updateJobcategoryInput.id,
+      updateJobcategoryInput,
+    );
   }
 
   @Mutation(() => Jobcategory)

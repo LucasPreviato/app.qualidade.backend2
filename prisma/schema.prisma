@@ -36,10 +36,10 @@ model UnitAddress {
   complement String?
   district   String?
   city       String?
-  cep        String? 
+  cep        String?
   uf         String?
-  unit       Unit?   @relation(fields: [unitid], references: [id])
-  unitid     Int?    @unique
+  unit       Unit?   @relation(fields: [unitId], references: [id])
+  unitId     Int?    @unique
 }
 
 model JobCategory {

@@ -18,16 +18,26 @@ input CreateJobcategoryInput {
 
 input CreateOccupationInput {
   alterations: String!
-  daterevision: DateTime!
   name: String!
-  version: Float!
+  revisionAt: DateTime
+  version: Int
+}
+
+input CreateUnitAddressInput {
+  cep: String
+  city: String
+  complement: String
+  district: String
+  number: String
+  street: String
+  uf: String
 }
 
 input CreateUnitInput {
   email: String!
   name: String!
   phone: String!
-  unitaddress: UnitAddressInput
+  unitaddress: CreateUnitAddressInput
 }
 
 """
@@ -81,18 +91,18 @@ type Mutation {
 
 type Occupation {
   alterations: String!
-  daterevision: DateTime!
-  id: Int!
+  id: Int
   name: String!
-  version: Float!
+  revisionAt: DateTime
+  version: Int
 }
 
 input OccupationInput {
   alterations: String!
-  daterevision: DateTime!
-  id: Int!
+  id: Int
   name: String!
-  version: Float!
+  revisionAt: DateTime
+  version: Int
 }
 
 type Query {
@@ -111,7 +121,7 @@ type Unit {
   id: Int!
   name: String!
   phone: String!
-  unitaddress: UnitAddress
+  unitAddress: UnitAddress
 }
 
 type UnitAddress {
@@ -143,7 +153,7 @@ input UnitInput {
   id: Int!
   name: String!
   phone: String!
-  unitaddress: UnitAddressInput
+  unitAddress: UnitAddressInput
 }
 
 input UpdateJobcategoryInput {
@@ -153,10 +163,10 @@ input UpdateJobcategoryInput {
 
 input UpdateOccupationInput {
   alterations: String
-  daterevision: DateTime
   id: Int!
   name: String
-  version: Float
+  revisionAt: DateTime
+  version: Int
 }
 
 input UpdateUnitInput {
@@ -164,5 +174,5 @@ input UpdateUnitInput {
   id: Int!
   name: String
   phone: String
-  unitaddress: UnitAddressInput
+  unitaddress: CreateUnitAddressInput
 }

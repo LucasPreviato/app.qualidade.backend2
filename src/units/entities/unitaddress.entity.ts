@@ -1,9 +1,8 @@
 import { ObjectType, Field, Int, InputType } from '@nestjs/graphql';
-import { Prisma } from '@prisma/client';
 
 @ObjectType()
 @InputType('UnitAddressInput')
-export class UnitAddress implements Prisma.UnitAddressUncheckedCreateInput {
+export class UnitAddress {
   @Field(() => Int, { nullable: true })
   id?: number;
   @Field(() => Int, { nullable: true })

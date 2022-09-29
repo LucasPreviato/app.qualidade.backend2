@@ -1,14 +1,13 @@
-import { InputType, Field } from '@nestjs/graphql';
-import { Prisma } from '@prisma/client';
+import { InputType, Field, Int } from '@nestjs/graphql';
 
 @InputType()
-export class CreateOccupationInput implements Prisma.OccupationCreateInput {
+export class CreateOccupationInput {
   @Field()
   name: string;
-  @Field()
+  @Field(() => Int, { nullable: true })
   version?: number;
-  @Field(() => Date)
-  daterevision: string | Date;
+  @Field(() => Date, { nullable: true })
+  revisionAt?: Date;
   @Field()
   alterations: string;
 }
